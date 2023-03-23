@@ -1,0 +1,21 @@
+#include "monty.h"
+
+/**
+ * pstr - Prints a string starting at the top of the stack
+ * @stack: Double pointer to the head of the stack
+ * @line_number: Line number of the opcode
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+
+	(void)line_number;
+
+	while (tmp && tmp->n != 0 && isascii(tmp->n))
+	{
+		printf("%c", tmp->n);
+		tmp = tmp->next;
+	}
+
+	printf("\n");
+}
